@@ -53,7 +53,7 @@ export default function Home() {
           TodoList
         </h1>
       </header>
-      <div className="flex flex-col h-96 w-96 bg-gray-50 shadow-md px-3 py-1 ">
+      <div className="flex flex-col h-96 w-96 bg-gray-50 shadow-md px-3 py-3 ">
         <AddTodo addTodo={addTodo}></AddTodo>
         <TodoList
           todos={filterTodo()}

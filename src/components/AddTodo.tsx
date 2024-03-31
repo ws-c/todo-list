@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState,useRef, useEffect } from 'react'
 
 type AddTodoProps = {
   addTodo: (todo: string) => void
@@ -9,9 +9,14 @@ export default function AddTodo({ addTodo }: AddTodoProps) {
     addTodo(text)
     setText('')
   }
+  const ref = useRef<HTMLInputElement>(null)
+  useEffect(()=>{
+    ref.current?.focus()
+  },[])
   return (
     <div className="flex justify-between h-10">
       <input
+        ref={ref}
         type="text"
         value={text}
         onChange={(e) => setText(e.target.value)}
